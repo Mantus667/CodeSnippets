@@ -59,5 +59,13 @@ namespace KnowDiabetes.Core.Extensions
 		{
 			return items.Where(item => item != null);
 		}
+		
+		public static void ForEach<T>(this IEnumerable<T> items, Action<T> action)
+		{
+		    if (items == null)
+			return;
+		    foreach (T obj in items)
+			action(obj);
+		}
 	}
 }
